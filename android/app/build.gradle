@@ -22,7 +22,13 @@ android {
     buildConfigField 'String', 'YAZIO_CLIENT_SECRET', '"' + envOr('YAZIO_CLIENT_SECRET','REPLACE_ME') + '"'
   }
 
-  buildFeatures { compose true }
+  
+  // ⬇️ AGGIUNGI QUESTO BLOCCO se non c'è già
+  buildFeatures {
+    buildConfig true    // necessario con AGP 8.x quando usi buildConfigField(...)
+    compose true        // (puoi lasciarlo se già presente)
+  }
+
   composeOptions { kotlinCompilerExtensionVersion '1.5.3' }
 
   packagingOptions { resources { excludes += '/META-INF/{AL2.0,LGPL2.1}' } }
