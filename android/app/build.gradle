@@ -23,6 +23,17 @@ android {
   }
 
   
+// ⬇️ Allinea Java a 17
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+
+  // ⬇️ Allinea Kotlin a 17
+  kotlinOptions {
+    jvmTarget = '17'
+  }
+
   // ⬇️ AGGIUNGI QUESTO BLOCCO se non c'è già
   buildFeatures {
     buildConfig true    // necessario con AGP 8.x quando usi buildConfigField(...)
