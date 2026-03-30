@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.colamarino.yazioapp">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Permessi -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -22,7 +21,10 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".MainActivity">
+        <!-- MAIN/LAUNCHER deve essere exported esplicitamente su Android 12+ -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
